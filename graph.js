@@ -1,18 +1,30 @@
 class Graph {
   constructor() {
-    // Create a property called `nodes` and set it equal to an empty object.
-    // This will be our adjacency list.
+    this.nodes = {}
   }
 
   addNode(node) {
-    // If the node value passed in does not already exist in our adjacency
-    // list, then add it as a key and set it equal to an empty array.
+    if (!this.nodes[node]) {
+      this.nodes[node] = []
+    }
   }
 
   addEdge(node, edgeNode) {
-    // If the node exists in our adjacency list, then push the edge into the
-    // array of edges for that node.
+    if (this.nodes[node] && this.nodes[edgeNode]) {
+      this.nodes[node].push(edgeNode)
+    }
   }
 }
+
+const graph = new Graph()
+graph.addNode("Mom")
+graph.addNode("Aunt")
+graph.addNode("Friend")
+graph.addEdge("Mom", "Aunt")
+graph.addEdge("Mom", "Friend")
+graph.addEdge("Aunt", "Mom")
+graph.addEdge("Friend", "Mom")
+
+console.log(graph)
 
 module.exports = { Graph };
