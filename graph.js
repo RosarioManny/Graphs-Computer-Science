@@ -24,7 +24,7 @@ graph.addEdge("Mom", "Aunt")
 graph.addEdge("Mom", "Friend")
 graph.addEdge("Aunt", "Mom")
 graph.addEdge("Friend", "Mom")
-
+// this creates an undirected list. 
 console.log(graph)
 
 module.exports = { Graph };
