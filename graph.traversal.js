@@ -17,11 +17,27 @@ class Graph {
     }
   }
 
-  // Depth first Search
-  // Breadth first Search
+  // Depth First Search
+  DFSrecursive(start) {
+    const results = []
 
-  BFS() {
+    return results
+  }
 
+  // Breadth First Search
+  BFS(start) {
+    const queue =[start];
+    const result = [];
+    const visited = {};
+    let currentNode;
+
+    visited[start] = true;
+
+    while(queue.length) {
+      currentNode = queue.shift()
+    }
+
+    return result;
   }
 }
 
@@ -41,3 +57,10 @@ graph.addEdge("E", "D")
 
 
 console.log(graph)
+
+// Graph Visualization
+//         A
+//      /  |  \
+//      B--C--E
+//      \  | /
+//         D
